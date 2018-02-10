@@ -78,7 +78,7 @@ t3
 再看一段代码
 
 ```js
-new Promise((res,rej)=>{k
+new Promise((res,rej)=>{
 	console.log('before then',this)   //{}
 	res()
 }).then(res=>{
@@ -104,4 +104,4 @@ setTimeout(function(){
 
 在浏览器中输出全部都是window
 而在node环境下则输出注释中的内容
-箭头函数为什么绑定了一个空对象，setTimeout的裸奔函数竟然输出setTimeout函数对象？这两点我都不懂
+箭头函数绑定了一个空对象，这个空对象就是当前文件作用域下的全局对象，可参考[这篇文章](关于Node的global变量.md)，而setTimeout中若传入一个匿名函数时返回一个Timeout对象是为何，还是有些迷惑。
