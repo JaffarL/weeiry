@@ -97,11 +97,27 @@ setTimeout(()=>{
 	console.log(this)       //{}
 },0)
 
-setTimeout(function(){
-	console.log(this)       //setTimeout
-},0)
 ```
 
 在浏览器中输出全部都是window
 而在node环境下则输出注释中的内容
-箭头函数绑定了一个空对象，这个空对象就是当前文件作用域下的全局对象，可参考[这篇文章](关于Node的global变量.md)，而setTimeout中若传入一个匿名函数时返回一个Timeout对象是为何，还是有些迷惑。
+箭头函数绑定了一个空对象，这个空对象就是当前文件作用域下的全局对象，可参考[这篇文章](关于Node的global变量.md)。
+
+```js
+setTimeout(function(){
+	console.log(this)       //Timeout
+},0)
+
+```
+
+这行代码输出的是一个Timeout对象，有点奇怪，改一下。
+
+```js
+this.x = setTimeout(function(){
+	console.log(this)
+},0)
+console.log(this)
+```
+
+此时全局下输出的this中有一个x对象，x对象中还有一个timeout对象。
+我认为应该是setTimeout函数会自己创建一个Timeout对象并复制给匿名函数中的this，而箭头函数中则直接绑定文件作用域对象。
