@@ -9,7 +9,7 @@
 ## Node结构
 
 先看张图
-![Node结构](Node结构.jpg)
+![Node结构](./img/Node结构.jpg)
 这是Node的结构：
 
 1. Node 标准库，就是我们平时用到的系统模块，fs,path什么的
@@ -312,7 +312,7 @@ fs.readFile(__filename, () => {
 1. Next Ticks Queue:由process.nextTick触发的函数
 2. 其他微任务:例如promise的resolve回调
 
-![intermediate queues](microTask.png)
+![intermediate queues](./img/microTask.png)
 
 如图所示，node中的事件循环可以看成四个队列按序清空，但从一个队列到下一个队列或者说阶段的中间，node都会去检查intermediate queues，若其中有回调函数则会调用并清空。
 
