@@ -1,2 +1,2 @@
 # weeiry
-I have A dairy,and a TECH weeiry
+I have A diary,and a TECH weeiry
