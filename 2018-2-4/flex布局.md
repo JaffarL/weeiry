@@ -50,14 +50,6 @@ flex容器存在两根轴，水平的主轴(**main axis**)和垂直的交叉轴(
 
 ```
 
-<div style='display:flex;width:100%;height:100px;'>
-
-<div style="width:30px;background-color:red"></div>
-<div style="flex:auto;background-color:blue"></div>
-<div style="width:30px;background-color:yellow"></div>
-
-</div>
-
 
 * 以下代码实现一个内容居中的div元素
 
@@ -76,21 +68,6 @@ flex容器存在两根轴，水平的主轴(**main axis**)和垂直的交叉轴(
 </div>
 
 ```
-
-
-
-<div style="width:150px;
-    height:150px;
-    background-color:black;    
-    display:flex;
-    justify-content:center;
-    align-items:center;">
-<div style="
-    background-color:white;
-    width:50%;
-    height:50%;">
-    </div>
-</div>
 
 [参考资料](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
